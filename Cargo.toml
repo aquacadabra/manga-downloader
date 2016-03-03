@@ -1,0 +1,11 @@
+[package]
+name = "manga-downloader"
+version = "0.1.0"
+authors = ["love2shop"]
+
+[dependencies.hyper]
+version = "0.7.2"
+default-features = false
+
+[dependencies.select]
+version = "0.2.2"
