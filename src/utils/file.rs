@@ -6,6 +6,6 @@ pub fn get_file_name_from_url(url: &str)->&str{
 }
 
 pub fn get_file_extension_from_filename(filename: &str)->&str{
-	let mut tokens = filename.split(".");
+	let tokens = filename.split(".");
 	return tokens.last().unwrap();
 }

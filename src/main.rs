@@ -32,7 +32,13 @@ fn process_chapter(url: &str, chap_number: i32){
 		let img_extension = utils::get_file_extension_from_filename(img_name);
 		let new_img_name = format!("{:04}", img_count).to_string() + ".";
 		let new_img_name = new_img_name + img_extension;
-		utils::download_file(&img, path.as_path().to_str().unwrap(), &new_img_name);
-		img_count = img_count + 1;
+		let new_img_name = new_img_name.to_lowercase();
+		match utils::download_image_file(&img, path.as_path().to_str().unwrap(), &new_img_name){
+			DownloadFileError::None =>{
+				img_count = img_count + 1;
+			},
+			_ => {},
+		}
+		
 	}
 }
